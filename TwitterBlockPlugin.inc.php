@@ -6,13 +6,13 @@ class TwitterBlockPlugin extends BlockPlugin
 
     public function getDisplayName()
     {
-        return 'Twitter Block Plugin';
+        return __('plugins.blocks.twitter.title');
     }
 
 
     public function getDescription()
     {
-        return 'This plugin provides sidebar Twitter Block.';
+        return __('plugins.blocks.twitter.desc');
     }
 
     public function getContents($templateMgr, $request = null)
