@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+<locale name="de_DE" full_name="Deutsch">
+    <message key="plugins.blocks.twitter.tweet.title">Title des Twitter Blocks (z.B. "Tweets by @PsychOpen").</message>
+    <message key="plugins.blocks.twitter.tweet.url">URL zum Tweet Feed (z.B. https://twitter.com/psychopen)</message>
+    <message key="plugins.blocks.twitter.tweet.color">Farbe für die internen Links (z.B. #8283c6)</message>
+    <message key="plugins.blocks.twitter.tweet.height">Maximale Höhe des Blocks (z.B. 500)</message>
+    <message key="plugins.blocks.twitter.tweet.options">Weitere Tweet Opionen (z.B. "nofooter noborders noheader")</message>
+</locale>
