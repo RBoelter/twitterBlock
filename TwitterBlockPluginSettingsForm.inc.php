@@ -10,12 +10,8 @@ class TwitterBlockPluginSettingsForm extends Form
 
     public function __construct($plugin)
     {
-
-// Define the settings template and store a copy of the plugin object
         parent::__construct($plugin->getTemplateResource('settings.tpl'));
         $this->plugin = $plugin;
-
-// Always add POST and CSRF validation to secure your form.
         $this->addCheck(new FormValidatorPost($this));
         $this->addCheck(new FormValidatorCSRF($this));
     }
@@ -55,8 +51,6 @@ class TwitterBlockPluginSettingsForm extends Form
      */
     public function fetch($request, $template = null, $display = false)
     {
-        // Pass the plugin name to the template so that it can be
-        // used in the URL that the form is submitted to
         $templateMgr = TemplateManager::getManager($request);
         $templateMgr->assign('pluginName', $this->plugin->getName());
         return parent::fetch($request, $template, $display);
@@ -68,13 +62,11 @@ class TwitterBlockPluginSettingsForm extends Form
     public function execute()
     {
         $contextId = Application::getRequest()->getContext()->getId();
-        error_log("####################" . $this->plugin->getName());
         $this->plugin->updateSetting($contextId, 'tweetTitle', $this->getData('tweetTitle'));
         $this->plugin->updateSetting($contextId, 'tweetUrl', $this->getData('tweetUrl'));
         $this->plugin->updateSetting($contextId, 'tweetColor', $this->getData('tweetColor'));
         $this->plugin->updateSetting($contextId, 'tweetOptions', $this->getData('tweetOptions'));
         $this->plugin->updateSetting($contextId, 'tweetHeight', $this->getData('tweetHeight'));
-        // Tell the user that the save was successful.
         import('classes.notification.NotificationManager');
         $notificationMgr = new NotificationManager();
         $notificationMgr->createTrivialNotification(
