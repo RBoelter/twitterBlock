@@ -30,6 +30,7 @@ class TwitterBlockPluginSettingsForm extends Form
         $this->setData('tweetColor', $this->plugin->getSetting($contextId, 'tweetColor'));
         $this->setData('tweetOptions', $this->plugin->getSetting($contextId, 'tweetOptions'));
         $this->setData('tweetHeight', $this->plugin->getSetting($contextId, 'tweetHeight'));
+        $this->setData('tweetDataLimit', $this->plugin->getSetting($contextId, 'tweetDataLimit'));
         parent::initData();
     }
 
@@ -38,7 +39,7 @@ class TwitterBlockPluginSettingsForm extends Form
      */
     public function readInputData()
     {
-        $this->readUserVars(['tweetTitle', 'tweetUrl', 'tweetColor', 'tweetOptions', 'tweetHeight']);
+        $this->readUserVars(['tweetTitle', 'tweetUrl', 'tweetColor', 'tweetOptions', 'tweetHeight', 'tweetDataLimit']);
         parent::readInputData();
     }
 
@@ -67,6 +68,7 @@ class TwitterBlockPluginSettingsForm extends Form
         $this->plugin->updateSetting($contextId, 'tweetColor', $this->getData('tweetColor'));
         $this->plugin->updateSetting($contextId, 'tweetOptions', $this->getData('tweetOptions'));
         $this->plugin->updateSetting($contextId, 'tweetHeight', $this->getData('tweetHeight'));
+        $this->plugin->updateSetting($contextId, 'tweetDataLimit', $this->getData('tweetDataLimit'));
         import('classes.notification.NotificationManager');
         $notificationMgr = new NotificationManager();
         $notificationMgr->createTrivialNotification(

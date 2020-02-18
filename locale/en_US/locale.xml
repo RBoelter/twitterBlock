@@ -8,4 +8,5 @@
     <message key="plugins.blocks.twitter.tweet.color">Color for the internal links (e.g. #8283c6)</message>
     <message key="plugins.blocks.twitter.tweet.height">Maximum height of the block (e.g. 500)</message>
     <message key="plugins.blocks.twitter.tweet.options">More Tweet Options (e.g. "nofooter noborders noheader")</message>
+    <message key="plugins.blocks.twitter.tweet.limit">Number of tweets (e.g. 3). No value causes the complete feed to be loaded.</message>
 </locale>

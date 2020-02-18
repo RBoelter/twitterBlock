@@ -20,6 +20,8 @@
     {fbvElement type="text" id="tweetColor" value=$tweetColor label="plugins.blocks.twitter.tweet.color"}
     {fbvElement type="text" id="tweetHeight" value=$tweetHeight label="plugins.blocks.twitter.tweet.height"}
     {fbvElement type="text" id="tweetOptions" value=$tweetOptions label="plugins.blocks.twitter.tweet.options"}
+    {fbvElement type="text" id="tweetDataLimit" value=$tweetDataLimit label="plugins.blocks.twitter.tweet.limit"}
+
     {/fbvFormSection}
     {/fbvFormArea}
     {fbvFormButtons submitText="common.save"}

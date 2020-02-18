@@ -23,6 +23,7 @@ class TwitterBlockPlugin extends BlockPlugin
         $templateMgr->assign('tweetColor', $this->getSetting($contextId, 'tweetColor'));
         $templateMgr->assign('tweetHeight', $this->getSetting($contextId, 'tweetHeight'));
         $templateMgr->assign('tweetOptions', $this->getSetting($contextId, 'tweetOptions'));
+        $templateMgr->assign('tweetDataLimit', $this->getSetting($contextId, 'tweetDataLimit'));
         return parent::getContents($templateMgr, $request);
     }
 
