@@ -3,7 +3,7 @@
 <version>
     <application>twitterBlock</application>
     <type>plugins.blocks</type>
-    <release>0.1.0.0</release>
+    <release>1.0.0.0</release>
     <date>2019-06-13</date>
     <lazy-load>1</lazy-load>
     <class>TwitterBlockPlugin</class>
