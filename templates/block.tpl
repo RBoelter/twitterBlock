@@ -7,5 +7,4 @@
            {if $tweetDataLimit}data-tweet-limit="{$tweetDataLimit}"{/if}></a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    
 </div>
