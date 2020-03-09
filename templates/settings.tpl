@@ -14,15 +14,24 @@
     {csrf}
 
     {fbvFormArea}
-    {fbvFormSection}
-    {fbvElement type="text" id="tweetTitle" value=$tweetTitle label="plugins.blocks.twitter.tweet.title"}
-    {fbvElement type="text" id="tweetUrl" value=$tweetUrl label="plugins.blocks.twitter.tweet.url"}
-    {fbvElement type="text" id="tweetColor" value=$tweetColor label="plugins.blocks.twitter.tweet.color"}
-    {fbvElement type="text" id="tweetHeight" value=$tweetHeight label="plugins.blocks.twitter.tweet.height"}
-    {fbvElement type="text" id="tweetOptions" value=$tweetOptions label="plugins.blocks.twitter.tweet.options"}
-    {fbvElement type="text" id="tweetDataLimit" value=$tweetDataLimit label="plugins.blocks.twitter.tweet.limit"}
-
-    {/fbvFormSection}
+			{fbvFormSection title="plugins.blocks.twitter.tweet.title"}
+				{fbvElement type="text" id="tweetTitle" value=$tweetTitle}
+			{/fbvFormSection}
+			{fbvFormSection title="plugins.blocks.twitter.tweet.url"}
+				{fbvElement type="text" id="tweetUrl" value=$tweetUrl}
+			{/fbvFormSection}
+			{fbvFormSection title="plugins.blocks.twitter.tweet.color"}
+				{fbvElement type="text" id="tweetColor" value=$tweetColor}
+			{/fbvFormSection}
+			{fbvFormSection title="plugins.blocks.twitter.tweet.height"}
+				{fbvElement type="text" id="tweetHeight" value=$tweetHeight}
+			{/fbvFormSection}
+			{fbvFormSection title="plugins.blocks.twitter.tweet.options"}
+				{fbvElement type="text" id="tweetOptions" value=$tweetOptions}
+			{/fbvFormSection}
+			{fbvFormSection title="plugins.blocks.twitter.tweet.limit"}
+				{fbvElement type="text" id="tweetDataLimit" value=$tweetDataLimit}
+			{/fbvFormSection}
     {/fbvFormArea}
     {fbvFormButtons submitText="common.save"}
 </form>
