@@ -24,7 +24,8 @@ class TwitterBlockPluginSettingsForm extends Form
      */
     public function initData()
     {
-        $contextId = Application::getRequest()->getContext()->getId();
+	    $context = Application::getRequest()->getContext();
+	    $contextId = ($context && isset($context) && $context->getId()) ? $context->getId() : CONTEXT_SITE;
         $this->setData('tweetTitle', $this->plugin->getSetting($contextId, 'tweetTitle'));
         $this->setData('tweetUrl', $this->plugin->getSetting($contextId, 'tweetUrl'));
         $this->setData('tweetColor', $this->plugin->getSetting($contextId, 'tweetColor'));
@@ -62,7 +63,8 @@ class TwitterBlockPluginSettingsForm extends Form
      */
     public function execute()
     {
-        $contextId = Application::getRequest()->getContext()->getId();
+	    $context = Application::getRequest()->getContext();
+	    $contextId = ($context && isset($context) && $context->getId()) ? $context->getId() : CONTEXT_SITE;
         $this->plugin->updateSetting($contextId, 'tweetTitle', $this->getData('tweetTitle'));
         $this->plugin->updateSetting($contextId, 'tweetUrl', $this->getData('tweetUrl'));
         $this->plugin->updateSetting($contextId, 'tweetColor', $this->getData('tweetColor'));
