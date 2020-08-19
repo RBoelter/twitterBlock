@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 <locale name="de_DE" full_name="Deutsch">
+    <message key="plugins.blocks.twitter.cookie.warning">Dieses Plugin verwendet ein Cookie von Twitter! Bitte fügen sie dementsprechend einen Eintrag in ihre Cookie-Police hinzu. Weitere Informationen finden sie unter <![CDATA[<a href="https://docs.pkp.sfu.ca/gdpr/en/what-policies#3-cookie-policy" target="_blank" rel="noopener">https://docs.pkp.sfu.ca/gdpr/en/what-policies#3-cookie-policy</a>]]> </message>
     <message key="plugins.blocks.twitter.title">Twitter-Block</message>
     <message key="plugins.blocks.twitter.desc">Dieses Plugin stellt einen Twitter Tweet in der Sidebar bereit.</message>
     <message key="plugins.blocks.twitter.tweet.title">Title des Twitter Blocks (z.B. "Tweets by @PsychOpen").</message>
