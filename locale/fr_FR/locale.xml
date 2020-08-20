@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
+<locale name="fr_FR" full_name="French (France)">
+    <message key="plugins.blocks.twitter.cookie.warning">Ce plugin utilise un cookie de Twitter ! Veuillez ajuster votre politique en matière de cookies en conséquence. Vous trouverez plus d'informations <![CDATA[<a href="https://docs.pkp.sfu.ca/gdpr/en/what-policies#3-cookie-policy" target="_blank" rel="noopener">ici</a>]]>.</message>
+    <message key="plugins.blocks.twitter.title">Bloc Twitter</message>
+    <message key="plugins.blocks.twitter.desc">Ce plugin permet d'afficher un fil Twitter dans la barre latérale.</message>
+    <message key="plugins.blocks.twitter.tweet.title">Titre du bloc Twitter (par exemple « Tweets par @PsychOpen »)</message>
+    <message key="plugins.blocks.twitter.tweet.url">URL du fil Twitter (par exemple https://twitter.com/psychopen)</message>
+    <message key="plugins.blocks.twitter.tweet.color">Couleur des liens internes (par exemple #8283c6)</message>
+    <message key="plugins.blocks.twitter.tweet.height">Hauteur maximale du bloc (par exemple 500)</message>
+    <message key="plugins.blocks.twitter.tweet.options">Plus d'options de tweet (par exemple « nofooter noborders noheader »)</message>
+    <message key="plugins.blocks.twitter.tweet.limit">Nombre de tweets (par exemple 3). En l'absence de valeur, l'ensemble du fil sera affiché.</message>
+</locale>
