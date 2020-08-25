@@ -31,14 +31,13 @@ describe('Twitter Block plugin tests', function () {
 		// Find and enable the plugin
 		cy.get('input[id^="select-cell-twitterblockplugin-enabled"]').click();
 		cy.get('div:contains(\'The plugin "Twitter Block" has been enabled.\')');
+		cy.waitJQuery();
 		cy.get(
 			'tr[id="component-grid-settings-plugins-settingsplugingrid-category-blocks-row-twitterblockplugin"] a[class="show_extras"]'
 		).click();
 		cy.get(
 			'a[id^="component-grid-settings-plugins-settingsplugingrid-category-blocks-row-twitterblockplugin-settings-button"]'
 		).click();
-		cy.waitJQuery();
-
 		// Fill out settings form
 		cy.get('form[id="twitterSettings"] input[name="tweetTitle"]')
 			.clear()
