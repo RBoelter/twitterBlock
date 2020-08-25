@@ -22,7 +22,7 @@ describe('Twitter Block plugin tests', function () {
 	});
 
 	it('Enable Twitter Block', function () {
-		cy.login('ojs', 'ojs', 'tj');
+		cy.login('admin', 'admin', 'publicknowledge');
 
 		cy.get('ul[id="navigationPrimary"] a:contains("Settings")').click();
 		cy.get('ul[id="navigationPrimary"] a:contains("Website")').click();
