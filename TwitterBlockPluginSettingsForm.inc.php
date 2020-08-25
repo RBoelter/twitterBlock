@@ -24,8 +24,9 @@ class TwitterBlockPluginSettingsForm extends Form
      */
     public function initData()
     {
-	    $context = Application::getRequest()->getContext();
-	    $contextId = ($context && isset($context) && $context->getId()) ? $context->getId() : CONTEXT_SITE;
+    	$request = Application::get()->getRequest();
+	    $context = $request->getContext();
+	    $contextId = ($context && $context->getId()) ? $context->getId() : CONTEXT_SITE;
         $this->setData('tweetTitle', $this->plugin->getSetting($contextId, 'tweetTitle'));
         $this->setData('tweetUrl', $this->plugin->getSetting($contextId, 'tweetUrl'));
         $this->setData('tweetColor', $this->plugin->getSetting($contextId, 'tweetColor'));
@@ -44,13 +45,17 @@ class TwitterBlockPluginSettingsForm extends Form
         parent::readInputData();
     }
 
-    /**
-     * Fetch any additional data needed for your form.
-     *
-     * Data assigned to the form using $this->setData() during the
-     * initData() or readInputData() methods will be passed to the
-     * template.
-     */
+	/**
+	 * Fetch any additional data needed for your form.
+	 *
+	 * Data assigned to the form using $this->setData() during the
+	 * initData() or readInputData() methods will be passed to the
+	 * template.
+	 * @param $request
+	 * @param null $template
+	 * @param bool $display
+	 * @return string|null
+	 */
     public function fetch($request, $template = null, $display = false)
     {
         $templateMgr = TemplateManager::getManager($request);
@@ -58,13 +63,16 @@ class TwitterBlockPluginSettingsForm extends Form
         return parent::fetch($request, $template, $display);
     }
 
-    /**
-     * Save the settings
-     */
-    public function execute()
+	/**
+	 * Save the settings
+	 * @param mixed ...$functionArgs
+	 * @return mixed|null
+	 */
+    public function execute(...$functionArgs)
     {
-	    $context = Application::getRequest()->getContext();
-	    $contextId = ($context && isset($context) && $context->getId()) ? $context->getId() : CONTEXT_SITE;
+	    $request = Application::get()->getRequest();
+	    $context = $request->getContext();
+	    $contextId = ($context && $context->getId()) ? $context->getId() : CONTEXT_SITE;
         $this->plugin->updateSetting($contextId, 'tweetTitle', $this->getData('tweetTitle'));
         $this->plugin->updateSetting($contextId, 'tweetUrl', $this->getData('tweetUrl'));
         $this->plugin->updateSetting($contextId, 'tweetColor', $this->getData('tweetColor'));
@@ -74,7 +82,7 @@ class TwitterBlockPluginSettingsForm extends Form
         import('classes.notification.NotificationManager');
         $notificationMgr = new NotificationManager();
         $notificationMgr->createTrivialNotification(
-            Application::getRequest()->getUser()->getId(),
+            $request->getUser()->getId(),
             NOTIFICATION_TYPE_SUCCESS,
             ['contents' => __('common.changesSaved')]
         );
