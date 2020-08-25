@@ -1,4 +1,4 @@
-# Twitter Block Plugin for OJS 3 
+# Twitter Block Plugin for OJS 3 [![Build Status](https://travis-ci.org/RBoelter/twitterBlock.svg?branch=master)](https://travis-ci.org/RBoelter/twitterBlock)
 
 #### Install the plugin via "Upload a new plugin" in the Plugin tab of the website settings or upload it directly to the Block Plugin folder (usually ojs-root/plugins/blocks).
 
