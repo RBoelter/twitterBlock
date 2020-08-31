@@ -1,0 +1,30 @@
+msgid "plugins.blocks.twitter.cookie.warning"
+msgstr "¡Este módulo utiliza una cookie de Twitter!"
+" Agregue una entrada adecuada a su política de cookies."
+" Puede encontrar más información <![CDATA["
+"<a href=\"https://docs.pkp.sfu.ca/gdpr/en/what-policies#3-cookie-policy\""
+" target=\"_blank\" rel=\"noopener\">aquí</a>]]>."
+
+msgid "plugins.blocks.twitter.title"
+msgstr "Bloque de Twitter"
+
+msgid "plugins.blocks.twitter.desc"
+msgstr "Este módulo proporciona un tweet de Twitter en la barra lateral."
+
+msgid "plugins.blocks.twitter.tweet.title"
+msgstr "Título del bloque de Twitter (por ejemplo, \"Tweets de @PsychOpen\")"
+
+msgid "plugins.blocks.twitter.tweet.url"
+msgstr "URL del Tweet Feed (por ejemplo, https://twitter.com/psychopen)"
+
+msgid "plugins.blocks.twitter.tweet.color"
+msgstr "Color para los enlaces internos (por ejemplo, #8283c6)"
+
+msgid "plugins.blocks.twitter.tweet.height"
+msgstr "Altura máxima del bloque (por ejemplo, 500)"
+
+msgid "plugins.blocks.twitter.tweet.options"
+msgstr "Más opciones de tweets (por ejemplo, \"nofooter noborders noheader\")"
+
+msgid "plugins.blocks.twitter.tweet.limit"
+msgstr "Número de tweets (por ejemplo, 3). Ningún valor hace que se cargue el feed completo."
