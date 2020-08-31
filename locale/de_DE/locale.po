@@ -1,0 +1,30 @@
+msgid "plugins.blocks.twitter.cookie.warning"
+msgstr "Dieses Plugin verwendet ein Cookie von Twitter!"
+" Bitte fügen sie dementsprechend einen Eintrag in ihre Cookie-Police hinzu."
+" Weitere Informationen finden sie unter <![CDATA["
+"<a href=\"https://docs.pkp.sfu.ca/gdpr/en/what-policies#3-cookie-policy\""
+" target=\"_blank\" rel=\"noopener\">hier</a>]]>"
+
+msgid "plugins.blocks.twitter.title"
+msgstr "Twitter-Block"
+
+msgid "plugins.blocks.twitter.desc"
+msgstr "Dieses Plugin stellt einen Twitter Tweet in der Sidebar bereit."
+
+msgid "plugins.blocks.twitter.tweet.title"
+msgstr "Title des Twitter Blocks (z.B. \"Tweets by @PsychOpen\")."
+
+msgid "plugins.blocks.twitter.tweet.url"
+msgstr "URL zum Tweet Feed (z.B. https://twitter.com/psychopen)"
+
+msgid "plugins.blocks.twitter.tweet.color"
+msgstr "Farbe für die internen Links (z.B. #8283c6)"
+
+msgid "plugins.blocks.twitter.tweet.height"
+msgstr "Maximale Höhe des Blocks (z.B. 500)"
+
+msgid "plugins.blocks.twitter.tweet.options"
+msgstr "Weitere Tweet Optionen (z.B. \"nofooter noborders noheader\")"
+
+msgid "plugins.blocks.twitter.tweet.limit"
+msgstr "Anzahl der Tweets (z.B. 3). Keine Angabe bewirkt, dass der komplette Feed geladen wird."
