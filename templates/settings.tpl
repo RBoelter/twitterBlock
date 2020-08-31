@@ -23,7 +23,7 @@
 			{fbvElement type="text" id="tweetTitle" value=$tweetTitle}
 		{/fbvFormSection}
 		{fbvFormSection title="plugins.blocks.twitter.tweet.url"}
-			{fbvElement type="text" id="tweetUrl" value=$tweetUrl}
+			{fbvElement type="url" id="tweetUrl" value=$tweetUrl}
 		{/fbvFormSection}
 		{fbvFormSection title="plugins.blocks.twitter.tweet.color"}
 			{fbvElement type="text" id="tweetColor" value=$tweetColor}
