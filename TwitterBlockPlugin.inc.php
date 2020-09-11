@@ -22,8 +22,8 @@ class TwitterBlockPlugin extends BlockPlugin
 
 	public function getContents($templateMgr, $request = null)
 	{
-		$context = Application::getRequest()->getContext();
-		$contextId = ($context && isset($context) && $context->getId()) ? $context->getId() : CONTEXT_SITE;
+		$context = Application::get()->getRequest()->getContext();
+		$contextId = ($context && $context->getId()) ? $context->getId() : CONTEXT_SITE;
 		$templateMgr->assign('tweetTitle', $this->getSetting($contextId, 'tweetTitle'));
 		$templateMgr->assign('tweetUrl', $this->getSetting($contextId, 'tweetUrl'));
 		$templateMgr->assign('tweetColor', $this->getSetting($contextId, 'tweetColor'));
