@@ -24,7 +24,7 @@ class TwitterBlockPluginSettingsForm extends Form
      */
     public function initData()
     {
-    	$request = Application::get()->getRequest();
+    	$request = Application::getRequest();
 	    $context = $request->getContext();
 	    $contextId = ($context && $context->getId()) ? $context->getId() : CONTEXT_SITE;
         $this->setData('tweetTitle', $this->plugin->getSetting($contextId, 'tweetTitle'));
@@ -70,7 +70,7 @@ class TwitterBlockPluginSettingsForm extends Form
 	 */
     public function execute(...$functionArgs)
     {
-	    $request = Application::get()->getRequest();
+	    $request = Application::getRequest();
 	    $context = $request->getContext();
 	    $contextId = ($context && $context->getId()) ? $context->getId() : CONTEXT_SITE;
         $this->plugin->updateSetting($contextId, 'tweetTitle', $this->getData('tweetTitle'));
