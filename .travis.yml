@@ -1,13 +1,17 @@
 # @file
 # .travis.yml - PKP Plugins Integration
 
+os: linux
+dist: xenial
 language: php
+
+branches:
+    only:
+        - master
 
 addons:
     apt:
         update: true
-
-sudo: required
 
 php:
     - 7.2
