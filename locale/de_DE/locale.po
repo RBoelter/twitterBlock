@@ -1,10 +1,3 @@
-msgid "plugins.blocks.twitter.cookie.warning"
-msgstr "Dieses Plugin verwendet ein Cookie von Twitter!"
-" Bitte fügen sie dementsprechend einen Eintrag in ihre Cookie-Police hinzu."
-" Weitere Informationen finden sie unter <![CDATA["
-"<a href=\"https://docs.pkp.sfu.ca/gdpr/en/what-policies#3-cookie-policy\""
-" target=\"_blank\" rel=\"noopener\">hier</a>]]>"
-
 msgid "plugins.blocks.twitter.title"
 msgstr "Twitter-Block"
 
@@ -28,3 +21,8 @@ msgstr "Weitere Tweet Optionen (z.B. \"nofooter noborders noheader\")"
 
 msgid "plugins.blocks.twitter.tweet.limit"
 msgstr "Anzahl der Tweets (z.B. 3). Keine Angabe bewirkt, dass der komplette Feed geladen wird."
+
+msgid "plugins.blocks.twitter.cookie.warning"
+msgstr "Dieses Plugin verwendet ein Cookie von Twitter!"
+       " Bitte fügen sie dementsprechend einen Eintrag in ihre Cookie-Police hinzu."
+       " Weitere Informationen finden sie <a href=\"https://docs.pkp.sfu.ca/gdpr/en/what-policies#3-cookie-policy\" target=\"_blank\" rel=\"noopener\">hier</a>."
