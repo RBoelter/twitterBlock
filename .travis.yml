@@ -8,6 +8,7 @@ language: php
 branches:
     only:
         - master
+        - stable-3_2_1
 
 addons:
     apt:
