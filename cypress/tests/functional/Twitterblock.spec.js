@@ -2,8 +2,7 @@ describe('Twitter Block plugin tests', function () {
 
 	it('Disable Twitter Block', function () {
 		cy.login('admin', 'admin', 'publicknowledge');
-		cy.get('ul[id="navigationPrimary"] a:contains("Settings")').click();
-		cy.get('ul[id="navigationPrimary"] a:contains("Website")').click();
+		cy.get('nav[class="app__nav"] a:contains("Website")').click();
 		cy.get('button[id="plugins-button"]').click();
 		// disable plugin if enabled
 		cy.get('input[id^="select-cell-twitterblockplugin-enabled"]')
@@ -18,8 +17,7 @@ describe('Twitter Block plugin tests', function () {
 
 	it('Enable Twitter Block', function () {
 		cy.login('admin', 'admin', 'publicknowledge');
-		cy.get('ul[id="navigationPrimary"] a:contains("Settings")').click();
-		cy.get('ul[id="navigationPrimary"] a:contains("Website")').click();
+		cy.get('nav[class="app__nav"] a:contains("Website")').click();
 		cy.get('button[id="plugins-button"]').click();
 		// Find and enable the plugin
 		cy.get('input[id^="select-cell-twitterblockplugin-enabled"]').click();
@@ -50,8 +48,7 @@ describe('Twitter Block plugin tests', function () {
 		cy.get('form[id="twitterSettings"] button[id^="submitFormButton"]').click();
 		cy.waitJQuery();
 		// enable block in sidebar if disabled
-		cy.get('ul[id="navigationPrimary"] a:contains("Settings")').click();
-		cy.get('ul[id="navigationPrimary"] a:contains("Website")').click();
+		cy.get('nav[class="app__nav"] a:contains("Website")').click();
 		cy.get('div[class*="pkpTabs--side"] button[id="setup-button"]').click();
 		cy.get('div[class*="pkpTabs--side"] #setup input[value="twitterblockplugin"]')
 			.then($btn => {
@@ -61,7 +58,7 @@ describe('Twitter Block plugin tests', function () {
 				}
 			});
 		// go to journal index
-		cy.get('ul[id="navigationUser"] li[class="view_frontend"] a').click();
+		cy.get('a[class="app__contextTitle"]').click();
 		cy.get('div[class*="block_twitter"]');
 		cy.get('div[class*="block_twitter"]:contains("@JohnWillinsky")');
 	});
