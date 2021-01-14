@@ -5,12 +5,12 @@ on:
             - stable-3_2_1
 jobs:
     full_ci:
-        name: ${{ matrix.pkp-application }}(${{ matrix.pkp-branch }}) - (PHP=${{ matrix.php-versions }}; DB=${{ matrix.dbs }})
+        name: ${{ matrix.pkp-application }}(BRANCH=${{ matrix.pkp-branch }} ;PHP=${{ matrix.php-versions }}; DB=${{ matrix.dbs }})
         runs-on: ubuntu-20.04
         strategy:
             fail-fast: false
             matrix:
-                php-versions: [ '7.3', '7.4' ]
+                php-versions: [ '7.3', '7.4', '8.0' ]
                 dbs: [ 'pgsql', 'mysql' ]
                 pkp-application: [ 'ojs', 'omp', 'ops' ]
                 pkp-branch: [ 'stable-3_2_1' ]
@@ -81,7 +81,7 @@ jobs:
             -   name: Create Content (${{ matrix.dbs }})
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    npx cypress run -b chrome --headless --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
+                    npx cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
                 env:
                     CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
 
