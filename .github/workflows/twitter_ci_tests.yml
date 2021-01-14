@@ -22,7 +22,7 @@ jobs:
                     MYSQL_DATABASE: ojs
                 ports:
                     - 3306:3306
-                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
             postgres:
                 image: postgres:latest
                 env:
@@ -31,7 +31,7 @@ jobs:
                     POSTGRES_DB: ojs
                 ports:
                     - 5432:5432
-                options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=3
+                options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
         env:
             CYPRESS_BASE_URL: http://localhost:8000
             CYPRESS_DBNAME: ojs
@@ -44,7 +44,7 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php-versions }}
-                    extensions: mbstring, mysqli, pgsql
+                    extensions: mbstring, mysql, pgsql
                 env:
                     update: true
 
