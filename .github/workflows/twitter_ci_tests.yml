@@ -37,7 +37,7 @@ jobs:
             CYPRESS_DBNAME: ojs
             CYPRESS_DBUSERNAME: root
             CYPRESS_DBPASSWORD: root
-            CYPRESS_DBHOST: localhost
+            CYPRESS_DBHOST: 127.0.0.1
             CYPRESS_FILESDIR: files
         steps:
             -   name: Setup PHP, extensions and composer
