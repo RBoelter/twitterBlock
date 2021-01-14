@@ -11,7 +11,7 @@ jobs:
             fail-fast: false
             matrix:
                 php-versions: [ '7.3', '7.4' ]
-                dbs: [ 'pgsql', 'mysqli' ]
+                dbs: [ 'pgsql', 'mysql' ]
                 pkp-application: [ 'ojs', 'omp', 'ops' ]
                 pkp-branch: [ 'stable-3_2_1' ]
         services:
@@ -44,7 +44,7 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php-versions }}
-                    extensions: mbstring, ${{ matrix.dbs }}
+                    extensions: mbstring, pgsql, mysql, mysqli
                     coverage: xdebug
                 env:
                     update: true
