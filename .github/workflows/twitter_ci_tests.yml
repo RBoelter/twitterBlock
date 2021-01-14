@@ -11,7 +11,7 @@ jobs:
             fail-fast: false
             matrix:
                 php-versions: [ '7.3', '7.4' ]
-                dbs: [ 'pgsql', 'mysql' ]
+                dbs: [ 'pgsql', 'mysqli' ]
                 pkp-application: [ 'ojs', 'omp', 'ops' ]
                 pkp-branch: [ 'stable-3_2_1' ]
         services:
@@ -33,7 +33,7 @@ jobs:
                     - 5432:5432
                 options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
         env:
-            CYPRESS_BASE_URL: http://localhost:8000
+            CYPRESS_BASE_URL: http://127.0.0.1:8000
             CYPRESS_DBNAME: ojs
             CYPRESS_DBUSERNAME: root
             CYPRESS_DBPASSWORD: root
@@ -77,7 +77,7 @@ jobs:
             -   name: Run Server
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    php -S localhost:8000 -t . >& access.log &
+                    php -S 127.0.0.1:8000 -t . >& access.log &
 
             -   name: Create Content (${{ matrix.dbs }})
                 run: |
