@@ -44,7 +44,8 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php-versions }}
-                    extensions: mbstring, mysql, pgsql
+                    extensions: dom, fileinfo, mysql, pgsql
+                    coverage: xdebug
                 env:
                     update: true
 
