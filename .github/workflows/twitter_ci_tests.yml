@@ -16,10 +16,11 @@ jobs:
                 pkp-branch: [ 'stable-3_2_1' ]
         services:
             mysql:
-                image: mysql:latest
+                image: mysql:5.7
                 env:
+                    MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: ojs-ci
-                    MYSQL_PASSWORD: ojs-ci
+                    MYSQL_PASSWORD: ojs-ci-password
                     MYSQL_DATABASE: ojs-ci
                 ports:
                     - 3306:3306
