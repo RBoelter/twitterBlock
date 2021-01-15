@@ -16,7 +16,7 @@ jobs:
                 pkp-branch: [ 'stable-3_2_1' ]
         services:
             mysql:
-                image: bitnami/mysql:latest
+                image: bitnami/mysql:5.7
                 env:
                     MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: ojs-ci
