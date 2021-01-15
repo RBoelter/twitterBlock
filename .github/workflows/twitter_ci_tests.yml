@@ -16,12 +16,13 @@ jobs:
                 pkp-branch: [ 'stable-3_2_1' ]
         services:
             mysql:
-                image: mariadb:latest
+                image: bitnami/mysql:8.0.20
                 env:
                     MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: ojs-ci
                     MYSQL_PASSWORD: ojs-ci
                     MYSQL_DATABASE: ojs-ci
+                    MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
                 ports:
                     - 3306:3306
                 options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
