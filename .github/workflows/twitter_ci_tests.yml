@@ -105,6 +105,6 @@ jobs:
                 if: ${{ always() }}
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    cat error.log
+                    cat /var/log/apache2/error_log
 
 
