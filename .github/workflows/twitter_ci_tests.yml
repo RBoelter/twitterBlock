@@ -84,7 +84,7 @@ jobs:
                     cd ~/${{ matrix.pkp-application }}
                     npx cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
                 env:
-                    CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
+                    CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQL' }}
 
             -   name: Run Tests
                 run: |
