@@ -99,4 +99,10 @@ jobs:
                     cd ~/${{ matrix.pkp-application }}
                     npx cypress run --config integrationFolder=plugins/blocks/twitterBlock/cypress/tests
 
+            -   name: Show log
+                if: ${{ always() }}
+                run: |
+                    cd ~/${{ matrix.pkp-application }}
+                    cat access.log
+
 
