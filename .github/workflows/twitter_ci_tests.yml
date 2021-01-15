@@ -33,6 +33,14 @@ jobs:
                     - 5432:5432
                 options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
         env:
+            BASEURL: http://127.0.0.1:8000
+            DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
+            DBHOST: 127.0.0.1
+            DBNAME: ojs
+            DBUSERNAME: root
+            DBPASSWORD: root
+            FILESDIR: files
+            DATABASEDUMP: ~/database.sql.gz
             CYPRESS_BASE_URL: http://127.0.0.1:8000
             CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
             CYPRESS_DBNAME: ojs
@@ -40,7 +48,6 @@ jobs:
             CYPRESS_DBPASSWORD: root
             CYPRESS_DBHOST: 127.0.0.1
             CYPRESS_FILESDIR: files
-            BASEURL: ${{ CYPRESS_BASE_URL }}
         steps:
             -   name: Setup PHP, extensions and composer
                 uses: shivammathur/setup-php@v2
@@ -59,13 +66,6 @@ jobs:
             -   name: Prepare Tests
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    export BASEURL=${CYPRESS_BASE_URL}
-                    export DBHOST=127.0.0.1
-                    export DBNAME=ojs
-                    export DBUSERNAME=root
-                    export DBPASSWORD=root
-                    export FILESDIR=files
-                    export DATABASEDUMP=~/database.sql.gz
                     cp config.TEMPLATE.inc.php config.inc.php
                     sed -i -e "s/enable_cdn = On/enable_cdn = Off/" config.inc.php
                     mkdir --parents files
