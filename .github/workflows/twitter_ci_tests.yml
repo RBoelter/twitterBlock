@@ -40,7 +40,7 @@ jobs:
             CYPRESS_DBPASSWORD: root
             CYPRESS_DBHOST: 127.0.0.1
             CYPRESS_FILESDIR: files
-            BASEURL: ${CYPRESS_BASE_URL}
+            BASEURL: $CYPRESS_BASE_URL
         steps:
             -   name: Setup PHP, extensions and composer
                 uses: shivammathur/setup-php@v2
