@@ -34,6 +34,7 @@ jobs:
                 options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
         env:
             CYPRESS_BASE_URL: http://127.0.0.1:8000
+            CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
             CYPRESS_DBNAME: ojs
             CYPRESS_DBUSERNAME: root
             CYPRESS_DBPASSWORD: root
@@ -54,10 +55,19 @@ jobs:
                     cd ~/${{ matrix.pkp-application }}
                     git submodule update --init --recursive
 
-            -   name: Prepare DB and Tests
+            -   name: Prepare Tests
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    source lib/pkp/tools/travis/prepare-tests.sh
+                    export BASEURL="http://127.0.0.1:8000"
+                    export DBHOST=127.0.0.1
+                    export DBNAME=ojs
+                    export DBUSERNAME=root
+                    export DBPASSWORD=root
+                    export FILESDIR=files
+                    export DATABASEDUMP=~/database.sql.gz
+                    cp config.TEMPLATE.inc.php config.inc.php
+                    sed -i -e "s/enable_cdn = On/enable_cdn = Off/" config.inc.php
+                    mkdir --parents files
 
             -   name: Install Composer Dependencies
                 run: |
@@ -82,8 +92,6 @@ jobs:
                 run: |
                     cd ~/${{ matrix.pkp-application }}
                     npx cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
-                env:
-                    CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
 
             -   name: Run Tests
                 run: |
