@@ -105,6 +105,6 @@ jobs:
                 if: ${{ always() }}
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    cat access.log
+                    cat error.log
 
 
