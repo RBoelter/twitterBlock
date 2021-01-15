@@ -19,16 +19,18 @@ jobs:
                 image: mysql:latest
                 env:
                     MYSQL_ROOT_PASSWORD: root
-                    MYSQL_DATABASE: ojs
+                    MYSQL_USER: ojs-ci
+                    MYSQL_PASSWORD: ojs-ci
+                    MYSQL_DATABASE: ojs-ci
                 ports:
                     - 3306:3306
                 options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
             postgres:
                 image: postgres:latest
                 env:
-                    POSTGRES_USER: root
-                    POSTGRES_PASSWORD: root
-                    POSTGRES_DB: ojs
+                    POSTGRES_USER: ojs-ci
+                    POSTGRES_PASSWORD: ojs-ci
+                    POSTGRES_DB: ojs-ci
                 ports:
                     - 5432:5432
                 options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
@@ -36,16 +38,16 @@ jobs:
             BASEURL: http://127.0.0.1:8000
             DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
             DBHOST: 127.0.0.1
-            DBNAME: ojs
-            DBUSERNAME: root
-            DBPASSWORD: root
+            DBNAME: ojs-ci
+            DBUSERNAME: ojs-ci
+            DBPASSWORD: ojs-ci
             FILESDIR: files
             DATABASEDUMP: ~/database.sql.gz
             CYPRESS_BASE_URL: http://127.0.0.1:8000
             CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
-            CYPRESS_DBNAME: ojs
-            CYPRESS_DBUSERNAME: root
-            CYPRESS_DBPASSWORD: root
+            CYPRESS_DBNAME: ojs-ci
+            CYPRESS_DBUSERNAME: ojs-ci
+            CYPRESS_DBPASSWORD: ojs-ci
             CYPRESS_DBHOST: 127.0.0.1
             CYPRESS_FILESDIR: files
         steps:
