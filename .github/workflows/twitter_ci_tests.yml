@@ -44,8 +44,7 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php-versions }}
-                    extensions: mbstring, pgsql, mysql, mysqlnd, mysqli
-                    coverage: xdebug
+                    extensions: mbstring, pgsql, mysqlnd, mysqli
                 env:
                     update: true
 
@@ -84,7 +83,7 @@ jobs:
                     cd ~/${{ matrix.pkp-application }}
                     npx cypress run --spec "cypress/tests/data/10-Installation.spec.js,cypress/tests/data/20-CreateContext.spec.js"
                 env:
-                    CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQL' }}
+                    CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
 
             -   name: Run Tests
                 run: |
