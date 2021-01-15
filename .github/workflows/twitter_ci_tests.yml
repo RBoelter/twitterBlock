@@ -22,7 +22,7 @@ jobs:
                     MYSQL_DATABASE: ojs
                 ports:
                     - 3306:3306
-                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5 --with-pdo-mysql --with-mysql-sock=/var/mysql/mysql.sock
+                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
             postgres:
                 image: postgres:latest
                 env:
