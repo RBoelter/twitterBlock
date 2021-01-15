@@ -18,18 +18,17 @@ jobs:
             mysql:
                 image: mysql:latest
                 env:
-                    MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: ojs-ci
-                    MYSQL_PASSWORD: ojs-ci
+                    MYSQL_PASSWORD: ojs-ci-password
                     MYSQL_DATABASE: ojs-ci
                 ports:
                     - 3306:3306
-                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
+                options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5 --default-authentication-plugin=mysql_native_password
             postgres:
                 image: postgres:latest
                 env:
                     POSTGRES_USER: ojs-ci
-                    POSTGRES_PASSWORD: ojs-ci
+                    POSTGRES_PASSWORD: ojs-ci-password
                     POSTGRES_DB: ojs-ci
                 ports:
                     - 5432:5432
@@ -40,14 +39,14 @@ jobs:
             DBHOST: 127.0.0.1
             DBNAME: ojs-ci
             DBUSERNAME: ojs-ci
-            DBPASSWORD: ojs-ci
+            DBPASSWORD: ojs-ci-password
             FILESDIR: files
             DATABASEDUMP: ~/database.sql.gz
             CYPRESS_BASE_URL: http://127.0.0.1:8000
             CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
             CYPRESS_DBNAME: ojs-ci
             CYPRESS_DBUSERNAME: ojs-ci
-            CYPRESS_DBPASSWORD: ojs-ci
+            CYPRESS_DBPASSWORD: ojs-ci-password
             CYPRESS_DBHOST: 127.0.0.1
             CYPRESS_FILESDIR: files
         steps:
@@ -102,9 +101,9 @@ jobs:
                     npx cypress run --config integrationFolder=plugins/blocks/twitterBlock/cypress/tests
 
             -   name: Show log
-                if: ${{ always() }}
+                if: ${{ failure() }}
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    cat /var/log/php_errors.log
+                    cat access.log
 
 
