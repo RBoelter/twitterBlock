@@ -6,7 +6,7 @@ on:
 jobs:
     full_ci:
         name: ${{ matrix.pkp-application }}(BRANCH=${{ matrix.pkp-branch }} ;PHP=${{ matrix.php-versions }}; DB=${{ matrix.dbs }})
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-latest
         strategy:
             fail-fast: false
             matrix:
@@ -44,7 +44,7 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: ${{ matrix.php-versions }}
-                    extensions: mbstring, pdo, xml, ctype, iconv, intl, dom, filter, gd, iconv, json, fileinfo, pgsql, pdo_mysql
+                    extensions: mbstring, pgsql, mysql, mysqli
                 env:
                     update: true
 
