@@ -16,7 +16,7 @@ jobs:
                 pkp-branch: [ 'stable-3_2_1' ]
         services:
             mysql:
-                image: bitnami/mysql:8.0.20
+                image: bitnami/mysql:latest
                 env:
                     MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: ojs-ci
@@ -36,14 +36,6 @@ jobs:
                     - 5432:5432
                 options: --health-cmd="pg_isready" --health-interval=10s --health-timeout=5s --health-retries=5
         env:
-            BASEURL: http://127.0.0.1:8000
-            DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
-            DBHOST: 127.0.0.1
-            DBNAME: ojs-ci
-            DBUSERNAME: ojs-ci
-            DBPASSWORD: ojs-ci
-            FILESDIR: files
-            DATABASEDUMP: ~/database.sql.gz
             CYPRESS_BASE_URL: http://127.0.0.1:8000
             CYPRESS_DBTYPE: ${{ matrix.dbs  == 'pgsql' && 'PostgreSQL' || 'MySQLi' }}
             CYPRESS_DBNAME: ojs-ci
