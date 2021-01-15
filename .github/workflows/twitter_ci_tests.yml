@@ -20,7 +20,7 @@ jobs:
                 env:
                     MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: ojs-ci
-                    MYSQL_PASSWORD: ojs-ci-password
+                    MYSQL_PASSWORD: ojs-ci
                     MYSQL_DATABASE: ojs-ci
                 ports:
                     - 3306:3306
