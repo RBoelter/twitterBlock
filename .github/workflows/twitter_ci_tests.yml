@@ -58,7 +58,7 @@ jobs:
             -   name: Prepare Tests
                 run: |
                     cd ~/${{ matrix.pkp-application }}
-                    export BASEURL="http://127.0.0.1:8000"
+                    export BASEURL=${CYPRESS_BASE_URL}
                     export DBHOST=127.0.0.1
                     export DBNAME=ojs
                     export DBUSERNAME=root
