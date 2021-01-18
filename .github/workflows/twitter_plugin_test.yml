@@ -16,7 +16,7 @@ jobs:
                 pkp-branch: [ 'master' ]
         services:
             mysql:
-                image: bitnami/mysql:lastest
+                image: bitnami/mysql:latest
                 env:
                     MYSQL_ROOT_PASSWORD: root
                     MYSQL_USER: ojs-ci
