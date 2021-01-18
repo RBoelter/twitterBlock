@@ -1,4 +1,4 @@
-name: Twitter Block Test
+name: CI Test
 on:
     push:
         branches:

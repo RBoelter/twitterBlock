@@ -1,9 +1,13 @@
 # Twitter Block Plugin for OJS 3
-[![Build Status](https://travis-ci.com/RBoelter/twitterBlock.svg?branch=master)](https://travis-ci.com/RBoelter/twitterBlock)
+
+
+
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/RBoelter/twitterBlock?include_prereleases&label=latest%20release)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/RBoelter/twitterBlock)
 ![GitHub](https://img.shields.io/github/license/RBoelter/twitterBlock)
-[![OJS-Version](https://img.shields.io/badge/pkp--ojs-3.2.1-brightgreen)](https://github.com/pkp/ojs/tree/stable-3_2_1)
+[![OJS-Version](https://img.shields.io/badge/pkp--ojs-3.3.0-brightgreen)](https://github.com/pkp/ojs/tree/master)
+[![OMP-Version](https://img.shields.io/badge/pkp--omp-3.3.0-brightgreen)](https://github.com/pkp/omp/tree/master)
+[![OPS-Version](https://img.shields.io/badge/pkp--ops-3.3.0-brightgreen)](https://github.com/pkp/ops/tree/master)
 ![GitHub All Releases](https://img.shields.io/github/downloads/RBoelter/twitterBlock/total)
 #### Install the plugin via "Upload a new plugin" in the Plugin tab of the website settings or upload it directly to the Block Plugin folder (usually ojs-root/plugins/blocks).
 
