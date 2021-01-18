@@ -1,6 +1,6 @@
 # Twitter Block Plugin for OJS 3
 
-
+![CI Test](https://github.com/RBoelter/twitterBlock/workflows/CI%20Test/badge.svg?branch=master)
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/RBoelter/twitterBlock?include_prereleases&label=latest%20release)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/RBoelter/twitterBlock)
