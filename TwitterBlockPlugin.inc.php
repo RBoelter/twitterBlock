@@ -3,10 +3,10 @@ import('lib.pkp.classes.plugins.BlockPlugin');
 
 class TwitterBlockPlugin extends BlockPlugin
 {
-	//enables plugin site-wide
+	// Enables plugin site-wide or in specific context; this must return true only if the user is in the site-wide context
 	public function isSitePlugin()
 	{
-		return true;
+		return !Application::get()->getRequest()->getContext();
 	}
 
 	public function getDisplayName()
