@@ -3,6 +3,11 @@ on:
     push:
         branches:
             - master
+    pull_request:
+        branches:
+            - master
+    schedule:
+        -   cron: '* 1 1 * *'
 jobs:
     full_ci:
         name: ${{ matrix.pkp-application }}(BRANCH=${{ matrix.pkp-branch }} ;PHP=${{ matrix.php-versions }}; DB=${{ matrix.dbs }})
