@@ -1,5 +1,14 @@
 # Twitter Block Plugin for OJS 3
 
+> [!WARNING]
+> **This plugin is no longer maintained and this repository is archived.**
+>
+> It embeds the timeline widget of X (formerly Twitter), which has been unreliable for visitors who are not logged in to X, and the code has not been updated since 2021. Porting it to a newer OJS would not fix that.
+>
+> **Successor: [Social Feed Block](https://github.com/RBoelter/socialFeedBlock)** for OJS 3.5. It shows the latest posts of a Mastodon or Bluesky account. The server fetches and caches the posts and renders plain HTML, so a visitor's browser loads nothing from the social network and no cookie is set. That also addresses the privacy concern raised in [#8](https://github.com/RBoelter/twitterBlock/issues/8).
+>
+> The existing releases stay available for OJS 3.3 installations.
+
 ![CI Test](https://github.com/RBoelter/twitterBlock/workflows/CI%20Test/badge.svg?branch=master)
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/RBoelter/twitterBlock?include_prereleases&label=latest%20release)
